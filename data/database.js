@@ -1,48 +1,39 @@
-// =============================================================
-// data/database.js — Banco de Dados em Memória
-// =============================================================
-// O que é isso?
-//   Em vez de usar um banco de dados real (como MySQL ou MongoDB),
-//   guardamos os dados aqui mesmo, dentro de arrays do JavaScript.
-//   Isso funciona enquanto o servidor está ligado.
-//   Quando o servidor reinicia, os dados voltam para o estado inicial.
-//
-// Por que usar isso nas aulas?
-//   Simplifica o aprendizado! Não precisamos instalar e configurar
-//   um banco de dados externo. O foco é aprender a API e os Middlewares.
-// =============================================================
-
-// ─── Tabela de Categorias ─────────────────────────────────────
-// Cada categoria agrupa produtos relacionados no cardápio.
 let categorias = [
-    { id: 1, nome: 'Combinados' },
-    { id: 2, nome: 'Temakis' },
-    { id: 3, nome: 'Bebidas' }
+    { id: 1, nome: "Temakis" },
+    { id: 2, nome: "Combinados" },
+    { id: 3, nome: "Bebidas" },
+    { id: 4, nome: "Sobremesas" }
 ];
 
-// ─── Tabela de Produtos ───────────────────────────────────────
-// Cada produto tem um ID único, pertence a uma categoria (categoriaId),
-// e possui nome, descrição, preço e o nome do arquivo de imagem.
 let produtos = [
-    {
-        id: 1,
-        categoriaId: 1,
-        nome: 'Combinado Salmão 20 Peças',
-        descricao: 'Sashimis, niguiris e uramakis de salmão fresco.',
-        preco: 89.90,
-        imagem: 'combinado1.png'
+    { 
+      categoriaId:1,
+      nome: "Temaki Completo",
+      descricao: "Temaki com salmão, atum, kani, cream cheese e cebola crispy", 
+      preco: 35.50,
+      imagem: "https://cdn.neemo.com.br/uploads/item/photo/2009270/202204141116_Y4RJ_i.webp" 
     },
-    {
-        id: 2,
-        categoriaId: 2,
-        nome: 'Temaki Filadélfia',
-        descricao: 'Salmão, cream cheese e cebolinha.',
-        preco: 35.00,
-        imagem: 'temaki-fila.png'
+    { 
+        categoriaId:2,      
+        nome: "Combinado 20 peças",
+        descricao: "Combinado com 20 peças variadas de sushi e sashimi", 
+        preco: 85.00,
+        imagem: "https://imagens.jotaja.com/produtos/c71b79fd-2f41-485e-91b2-6c7b0bfe170f.jpg"
+    },
+    { 
+        categoriaId:3, 
+        nome: "Refrigerante",
+        descricao: "Refrigerante Coca-Cola 350ml", 
+        preco: 8.00,
+        imagem: "https://carrefourbrfood.vtexassets.com/arquivos/ids/119765719/coca-cola-lata-350-ml-1.jpg?v=638224488171270000"
+    },
+    { 
+        categoriaId:4, 
+        nome: "Mochi de Morango", 
+        descricao: "Bolinho de arroz glutinoso recheado sabor morango",
+        preco: 12.00,
+        imagem: "https://cdn.dlojavirtual.com/static1/108009/sku/alimentos-bomboniere-bolinho-de-arroz-mochi-sabor-cacau-e-morango-80-gramas-1747939923565.jpg"
     }
 ];
 
-// ─── Exportação dos dados ─────────────────────────────────────
-// Exportamos as duas variáveis num único objeto para que outros
-// arquivos (como as rotas) possam importar e usar esses dados.
 module.exports = { categorias, produtos };
